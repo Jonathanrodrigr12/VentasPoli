@@ -1,0 +1,39 @@
+version: "3.9"
+services:
+  db:
+    image: postgres
+    container_name: postgres_ip
+    volumes:
+      - ./scripts/1-createtables.sql:/docker-entrypoint-initdb.d/1-createtables.sql
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin123
+    ports:
+      - 9932:5432
+    networks:
+      - api2  
+  api:
+    container_name: first
+    depends_on:
+      - db
+    restart: unless-stopped
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      labels:
+        - poc
+    volumes:
+        - .:/code
+    command:
+      - /bin/sh
+      - -c
+      - |
+        gunicorn app.main:app --workers 2 \
+        --worker-class uvicorn.workers.UvicornWorker -b 0.0.0.0:6969
+
+    ports:
+      - 6969:6969
+    networks:
+      - api2  
+  networks:
+    api2:    
