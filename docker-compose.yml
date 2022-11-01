@@ -11,11 +11,9 @@ services:
     ports:
       - 9932:5432
     networks:
-      - api2  
-  api:
+      - api2 
+  first:
     container_name: first
-    depends_on:
-      - db
     restart: unless-stopped
     build:
       context: ./
@@ -35,5 +33,5 @@ services:
       - 6969:6969
     networks:
       - api2  
-  networks:
-    api2:    
+networks:
+  api2: 
