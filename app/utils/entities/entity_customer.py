@@ -1,9 +1,8 @@
 from typing import List
 from pydantic import BaseModel
 
-#Las entidades se pueden crear en una sola clase por clase, es decir 
-# Dejar en una sola clase, todas las entidades posibles. Sea de respuesta o de ingreso
 class CustomerEntity(BaseModel):
+    """Customer Entity for able register new customer"""
     name: str = ''
     last_name: str = ''
     year_old: int = 0
@@ -13,31 +12,23 @@ class CustomerEntity(BaseModel):
     phone: str = ''
 
 class ErrorCustomer(BaseModel):
+    """Client error for handling all types of errors."""
     status: str = ''
     message: str = ''
 
-class SuccesfulRegiser(BaseModel):
-    token: str = ''
-    name: str = ''
-
-class LoginCustomer(BaseModel):
-    user: str = ''
-    password: str = ''
-
-class RestorePassword(BaseModel):
-    user: str = ''
-    restore_form: str = ''
-
-class ResetPassword(BaseModel):
-    user: str = ''
-    password: str = ''
-
 class ResponseModel(BaseModel):
+    """Response Model that help handling one only response."""
     status: int
     details: List[ErrorCustomer] 
     data: List
 
+class LoginCustomer(BaseModel):
+    """Model that allow access the application."""
+    user: str = ''
+    password: str = ''
+
 class ResponseException(Exception):
+    """Hanlder message exception"""
     status: int
     details: List[ErrorCustomer] 
     data: List

@@ -2,7 +2,7 @@ from cryptography.fernet import Fernet
 from  app.constants_file import Constants
 
 class Encryption():
-
+    """Encryption for encrypt password or whatever string."""
     @staticmethod
     def get_key():
         return Constants.key_encryption

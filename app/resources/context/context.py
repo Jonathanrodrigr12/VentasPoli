@@ -13,6 +13,7 @@ Base = declarative_base()
 
 # Dependency
 def get_db():
+    """Create connection with the data base"""
     db = SessionLocal()
     try:
         yield db

@@ -3,6 +3,7 @@ from sqlalchemy import Column, Integer, VARCHAR
 from app.resources.context.context import Base
 
 class CustomerModel(Base):
+    """Columns of the Model Customer."""
     __tablename__ = "customer"
     
     id = Column(Integer, autoincrement=True ,primary_key=True,index=True)
