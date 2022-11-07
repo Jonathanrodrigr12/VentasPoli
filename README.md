@@ -53,6 +53,18 @@ Configurar un entorno virtual:
         INFO:     Waiting for application startup.
         INFO:     Application startup complete.
         
+## Test-Automáticos
+
+- Para realizar pruebas de nuestro api, instalaremos **pytest**.
+
+	> pip install pytest
+	>
+	> python -m pytest (correr test)
+
+Resultado:
+	
+![enter image description here](https://i.postimg.cc/gjnJg3Vv/Whats-App-Image-2022-11-07-at-1-48-25-PM.jpg)
+
 ## Arquitectura del proyecto
 
 **FastAPI** proporciona una herramienta práctica para estructurar su aplicación manteniendo toda la flexibilidad, y fácil organización de aplicaciones a gran escala, todos los componentes, recursos y características de un proyecto se mantienen y organizan por separado del otro código fuente de la aplicación.
