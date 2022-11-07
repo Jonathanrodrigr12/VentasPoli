@@ -70,6 +70,20 @@ Resultado:
 	
 ![enter image description here](https://i.postimg.cc/gjnJg3Vv/Whats-App-Image-2022-11-07-at-1-48-25-PM.jpg)
 
+## Code coverage
+
+- Instalaremos **coverage**.
+	> pip install coverage
+
+- Una vez configurado pytest y coverage, ejecutamos los siguientes comandos:
+	> coverage run -m pytest
+	>
+	> coverage  report / coverage html (correr coverage)
+
+Resultado:
+
+![enter image description here](https://i.postimg.cc/kXJQrz5X/Whats-App-Image-2022-11-07-at-2-04-24-PM.jpg)
+
 ## Arquitectura del proyecto
 
 **FastAPI** proporciona una herramienta práctica para estructurar su aplicación manteniendo toda la flexibilidad, y fácil organización de aplicaciones a gran escala, todos los componentes, recursos y características de un proyecto se mantienen y organizan por separado del otro código fuente de la aplicación.
