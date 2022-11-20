@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Preparacion') {
+            steps {
+                git branch: "${BRANCH_NAME}", credentialsId: 'carlos-github', url: 'https://github.com/Jonathanrodrigr12/VentasPoli.git/'
+                bat 'pip install fastapi'
+                bat 'pip install "uvicorn[standard]"'
+                bat 'pip install -r requirements.txt'
+            }
+        }
+        stage('Generar imagenes de Docker'){
+            steps{
+                bat 'docker build -t ventaspoli .'
+            }
+        }
+        /*stage('Pruebas Unitarias'){
+            steps {
+                bat 'pip install pytest'
+                bat 'python -m pytest'
+            }
+        }*/
+    }
+}
