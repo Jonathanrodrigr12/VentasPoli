@@ -81,6 +81,28 @@ def test_lista_usr():
      'identification': '007006', 'email': 'elprofe@super_o.com', 'password': '', 'phone': '9876543'}]]}
     print(response.json())
 
+#test 6
+#Login invalido mal password 
+#verifica respuesta http 400
+#verifica consistencia del json devuelto
+def test_login_bad1():
+    response = client.post("http://localhost:6969/login/",
+    headers={"accept": "application/json","Content-Type": "application/json"},
+    json={"user": "el@correo.com","password": "22345678"})
+    assert response.json()['status'] == 400
 
+
+
+#test 7
+#Lista de usuarios registrados token invalido
+#verifica respuesta http 200
+#verifica consistencia del json devuelto
+def test_lista_usr_bad_tok():
+    response = client.get('http://localhost:6969/get_customers/',
+    headers={"accept": "application/json","token-passed": tok+"1"})
+    print(response.json())
+    assert response.json()['status'] == 401
+    assert response.json() == {'status': 401, 'data': [],
+     'details': [{'message': 'Invalid Token', 'status': 'error'}]}
 
 
