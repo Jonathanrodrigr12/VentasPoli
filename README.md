@@ -58,7 +58,16 @@ Configurar un entorno virtual:
         INFO:     Started server process [82409]
         INFO:     Waiting for application startup.
         INFO:     Application startup complete.
-        
+
+## Tests-Unitarions
+- Para ejecutar los test unitarios, desde la raiz del proyecto se debe ejecutar el comando 
+	> python -m unittest discover .\app\unit_tests\
+	> .........
+	> ----------------------------------------------------------------------
+	> Ran 9 tests in 0.001s
+	> OK
+
+
 ## Test-Automáticos
 
 - Para realizar pruebas de nuestro api, instalaremos **pytest**.
