@@ -101,6 +101,10 @@ Resultado:
 ## Arquitectura Cloud
 ![enter image description here](https://i.postimg.cc/76gWvzm2/Whats-App-Image-2022-11-06-at-5-38-18-PM.jpg)
 
+## Arquitectura DevOps para Integracion y Despliegue continuo, modelo CAAS (Code as a Service)
+
+![image](https://user-images.githubusercontent.com/32824130/205352158-e89f61b8-cf3f-4d72-b0a8-296c0e7fd879.png)
+
 ## Instalando Jenkins.
 
    1.  Ir al sitio de descargas de Jenkins: [https://www.jenkins.io/download/](https://www.jenkins.io/download/)
