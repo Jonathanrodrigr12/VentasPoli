@@ -12,7 +12,7 @@ pipeline {
         }
 		stage('Pruebas Unitarias'){
             steps {
-                bat 'python -m unittest discover .\app\unit_tests\'
+                bat 'python -m unittest discover .\\app\\unit_tests\\'
             }
         }
         stage('Generar imagenes de Docker'){
