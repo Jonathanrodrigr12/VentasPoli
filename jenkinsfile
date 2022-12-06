@@ -10,16 +10,15 @@ pipeline {
                 bat 'pip install -r requirements.txt'
             }
         }
+		stage('Pruebas Unitarias'){
+            steps {
+                bat 'python -m unittest discover .\app\unit_tests\'
+            }
+        }
         stage('Generar imagenes de Docker'){
             steps{
                 bat 'docker build -t ventaspoli .'
             }
-        }
-        /*stage('Pruebas Unitarias'){
-            steps {
-                bat 'pip install pytest'
-                bat 'python -m pytest'
-            }
-        }*/
+        }        
     }
 }
