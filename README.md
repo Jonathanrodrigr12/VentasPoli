@@ -11,7 +11,7 @@ entre sí.
 Requisitos previos
 
 - Python 3.10+.
-- Framework FastAip.
+- Framework FastApi.
 - Ubicarse en la raiz del proyecto.
 
 Una vez configurado python, estará listo para comenzar:
